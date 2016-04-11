@@ -37,7 +37,9 @@ public class GdsDaoService {
 
     String serviceNameSpace = null;
 
-    static final String GdsDaoNameSpaceEnvKey = "idp.service.db.keyspace.name";
+    // static final String GdsDaoNameSpaceEnvKey =
+    // "idp.service.db.keyspace.name";
+    static final String GdsDaoNameSpaceEnvKey = "idpServiceDbKeyspaceName";
 
     ConcurrentHashMap<String, KeyFactory> factory = new ConcurrentHashMap<String, KeyFactory>();
 
