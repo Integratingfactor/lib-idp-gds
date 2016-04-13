@@ -14,7 +14,6 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
-import org.springframework.core.env.Environment;
 import org.springframework.util.SerializationUtils;
 
 import com.google.gcloud.datastore.Blob;
@@ -37,8 +36,6 @@ public class GdsDaoService {
 
     String serviceNameSpace = null;
 
-    // static final String GdsDaoNameSpaceEnvKey =
-    // "idp.service.db.keyspace.name";
     static final String GdsDaoNameSpaceEnvKey = "idpServiceDbKeyspaceName";
 
     ConcurrentHashMap<String, KeyFactory> factory = new ConcurrentHashMap<String, KeyFactory>();
@@ -65,8 +62,8 @@ public class GdsDaoService {
         assert (serviceNameSpace != null);
     }
 
-    public GdsDaoService(Environment env) {
-        serviceNameSpace = env.getProperty(GdsDaoNameSpaceEnvKey);
+    public GdsDaoService(String serviceNameSpace) {
+        this.serviceNameSpace = serviceNameSpace;
         assert (serviceNameSpace != null);
     }
 
