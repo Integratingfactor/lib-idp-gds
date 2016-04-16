@@ -18,16 +18,20 @@
 	</properties>
 
 	<dependencies>
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring-framework.version}</version>
-		</dependency> -->
+		</dependency>
 		<dependency>
 			<groupId>com.google.gcloud</groupId>
 			<artifactId>gcloud-java-datastore</artifactId>
 			<version>0.1.7</version>
 			<exclusions>
+				<exclusion>
+					<groupId>com.google.api-client</groupId>
+					<artifactId>google-api-client-servlet</artifactId>
+				</exclusion>
 				<exclusion>
 					<groupId>javax.servlet</groupId>
 					<artifactId>servlet-api</artifactId>
